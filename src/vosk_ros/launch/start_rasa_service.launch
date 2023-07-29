@@ -1,0 +1,9 @@
+<launch>
+  <node name="rosbridge_server" pkg="rosbridge_server" type="rosbridge_websocket.py" respawn="true" output="screen" />
+  <node name="frontend" pkg="flask_demo" type="listener.py" respawn="true" output="screen" />
+  <node name="rasa_server" pkg="rasa_ros" type="dialogue_server.py" respawn="true" output="screen" />
+  <node name="rasa" pkg="rasa_ros" type="dialogue_interface.py" respawn="true" output="screen" />
+  <node name="stt_engine" pkg="tts" type="nix.py" respawn="true" output="screen" />
+  <node name="tts_engine" pkg="vosk_ros" type="vosk_node.py" respawn="true" output="screen" />
+  <rosparam file="$(find vosk_ros)/config/params.yaml" command="load" ns="" />
+</launch>

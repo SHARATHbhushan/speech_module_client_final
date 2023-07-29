@@ -1,0 +1,3 @@
+extra requirements, 
+pip install librosa
+pip install ffmpeg

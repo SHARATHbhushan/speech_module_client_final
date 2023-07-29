@@ -1,0 +1,5 @@
+<launch>
+
+	<node name="server" pkg="flask_demo" type="server.py" output="screen"/>
+
+</launch>
